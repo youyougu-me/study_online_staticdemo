@@ -1,0 +1,43 @@
+/*抄的京东初始化*/
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing:border-box;
+	/*这个是CSS3，我没考虑兼容性*/
+}
+.w{   /*版心*/
+	width: 1200px;
+	margin:0 auto;
+}
+
+a:hover {
+	color: #00a4ff;
+}
+
+em,i{
+	font-style: normal;
+}
+li{
+	list-style: none;
+}
+img{
+	border:0;
+	vertical-align: middle;
+	/*好像是去除图片底侧缝隙，要么改为top,让其和文字对齐*/
+}
+button{
+	cursor: pointer;
+}
+a{
+	text-decoration:none; 
+}
+.clearfix:after{ /*清除浮动*/
+	content: "";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+.clearfix{
+	*zoom:1;
+}

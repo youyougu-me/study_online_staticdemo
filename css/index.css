@@ -1,0 +1,415 @@
+body{
+	background-color: #f4f5f7;
+	/*height: 3000px;*/
+}
+.header{  /*第一大*/
+	width: 1200px; /*原版1390，我的分辨率低*/
+	height: 100px;
+	/*background-color: pink;*/
+	margin: 0 auto;
+	padding-top:30px;
+}
+.log{
+	width: 195px;
+	height: 42px;
+	float: left;
+}
+.log a{
+	display: block;
+	width: 195px;
+	height: 42px;
+	background: url(../images/logo.png) no-repeat top left;
+	text-indent: -999px;  /*a里面的文字缩进*/
+	overflow: hidden;
+}
+.nav{
+	float: left;  /*像这种它和它的儿子li都要浮动*/
+	/*都浮动它儿子才可以把它撑起来*/
+	margin-left: -1px;
+}
+.nav li{
+	float: left;
+	height: 40px;  /*跟log一样高就会相对于log居中*/
+	line-height: 40px;
+	margin-left: 20px;
+}
+.nav li a{
+	font-size: 16px;
+	height: 40px;
+	padding:0 5px; /*把盒子挤大*/
+	/*虽然用了自动padding的那种，但是a并未给宽啊，所以盒子依然撑大*/
+}
+.nav li a:hover{
+	border-bottom: 2px solid #00a4ff;
+}
+/*记住，用了css3的新模式，边框一定要量进去，因为w,h给定了，这个盒子
+总面积就那么大了，系统自己往里缩。。。*/
+.search{
+	width: 410px;
+	height: 40px;
+	float: left;
+	margin-left: 148px;
+	/*background-color: purple;*/
+}
+.search input{
+	width: 361px;
+	height: 40px;
+	border: 1px solid #00a4ff;
+	padding-left: 10px;
+	font-size: 18px;/* 差一个格式化字体的样式*/
+	float: left;
+	outline: none;
+}
+.search button{
+	width: 49px;  /*刚好装满父亲*/
+	height: 40px;
+	outline: none;
+	border: 0;
+	float: left;
+	background: url(../images/fa-search.png) no-repeat; /*50.40*/
+	/*虽然图比较大，但是它靠左上对齐盒子，多余的切掉*/
+}
+.personal{
+	height: 40px;
+	line-height: 40px;
+	float: right;
+	margin-right: 10px;
+	font-size: 14px;
+}
+.personal dt{
+	float: left;
+	cursor: pointer;
+}
+.personal dd{
+	float: left;
+}
+.personal dd s {
+	position: relative;
+	text-decoration: none;
+}
+.personal dd s img{
+	/*vertical-align: baseline;*/
+	/*在这里这个对得齐些*/
+	margin-left: 15px;
+	cursor: pointer;
+}
+.personal dd s::after{
+	content: ""; /*必写*/
+	width: 6px;
+	height: 6px;
+	background-color: red;
+	border-radius: 50%;
+	display: block;
+	position: absolute;
+	left: 27px;
+	top: 0;
+}
+.personal dd span{
+	margin-left: 18px;
+}
+.personal dd span img{
+	margin-right: 10px;
+	border-radius: 50%;
+	cursor: pointer;
+}
+.banner{ /*第二大*/
+	height: 420px;
+	background-color: #1c036c;
+}
+.banner .inner{
+	height: 420px;
+	position: relative;
+}
+.banner .inner ul li{
+	width: 1200px;
+	height: 420px;
+	margin:0 auto;
+}
+.banner .inner ul a{
+	display: block;
+	width: 1200px;
+	height: 420px;
+}
+.banner .inner ul img{ /*1199*420,在这里为配合拉伸了*/
+	width: 1200px;
+	height: 420px;
+	/*margin: 0 auto;*/ /*行内块，左右居中无效*/
+}
+.banner .subnav{
+	width: 190px;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: rgba(0,0,0,0.4);
+	padding-top: 30px;
+	padding-left: 20px;
+}
+.banner .subnav li{
+	position: relative;
+	height: 40px;
+}
+.banner .subnav a{
+	color: #ccc;
+	font-size: 15px;
+}
+.banner .subnav a:hover{
+	color:  #00a4ff;
+}
+.banner .subnav span{
+	position: absolute;
+	top: 0;
+	right: 20px;
+}
+.banner .circle{
+	width: 176px;
+	height: 20px;
+	/*background-color: red;*/
+	position: absolute;
+	left: 50%;
+	/*margin-left: -88px;*/
+	transform: translate(-50%,0); /*水平居中新写法*/
+	bottom: 20px;
+}
+.banner .circle i{
+	width: 13px;
+	height: 13px;
+	background-color: rgba(255,255,255,0.4);
+	border-radius: 6px;
+	display: inline-block;
+	margin:0 5px;
+	cursor: pointer;
+	transition: all 0.3s;
+}
+.banner .circle i:hover{
+	width: 20px;
+	background-color: #fff;
+}
+.banner .timebook{
+	width: 228px;
+	height: 300px;
+	background-color: #fff;
+	top: 50%;
+	transform: translate(0,-50%);
+	right: 0;
+	position: absolute;
+}
+.timebook dt{
+	height: 50px;
+	background-color: #9bceea;
+	font-size: 18px;
+	text-align: center;
+	line-height: 50px;
+	font-weight: 700;
+	color: #fff;
+}
+.timebook dd{
+	padding:15px 20px 0;
+}
+.timebook dd li{
+	border-bottom: 1px solid #ccc;
+	height: 50px;
+	padding-top: 5px;
+	cursor: pointer;
+}
+.timebook dd li:hover{
+	color: #00a4ff;
+}
+.timebook dd .li3{
+	border: 0;
+}
+.timebook dd li h5 , .timebook dd li p{
+	font-size: 14px;
+	font-weight: 500;
+}
+.timebook dd .all{
+	margin-top: 20px;
+	display: block;
+	height: 40px;
+	border: 1px solid #00a4ff;
+	text-align: center;
+	line-height: 40px;
+	color: #00a4ff;
+	font-weight: 500;
+}
+.timebook dd .all:hover{
+	background-color:#00a4ff;
+	color: #fff;
+}
+.recommend{
+	margin-top: 10px;
+	height: 60px;
+	line-height: 60px;  /*让里面的东西都垂直居中*/
+	background-color: #fff;
+	position: relative;
+	font-size: 14px;
+	box-shadow: 2px 5px 4px rgba(0,0,0,0.4);
+}
+.recommend .rec-l{
+	padding-left: 30px;
+}
+.rec-l strong{
+	color:#00a4ff;
+	cursor: pointer;
+	margin-right: 15px; 
+}
+.rec-l a{
+	margin: 0 15px;
+	color: #000; /*这里不给颜色，则公共样式的a:hover才有效*/
+}
+.rec-l a:hover{ /*上面给了颜色，这里只有单独加了*/
+	color: #00a4ff;
+}
+.recommend em{
+	position: absolute;
+	right: 20px;
+	top: 0;
+}
+.recommend em:hover{
+	color: #00a4ff;
+	cursor: pointer;
+}
+.products{
+	/*background-color: pink;*/
+	margin-top: 38px;
+	position: relative;
+}
+.pro-hd{
+	height: 50px;
+}
+.pro-hd h4{
+	color: #000;
+	cursor: pointer;
+}
+.pro-hd a{
+	position: absolute;
+	top: 0;
+	right: 20px;
+	font-size: 12px;
+	color: #000;
+}
+.pro-bd li{
+	width: 228px;
+	height: 270px;
+	background-color: #fff;
+	margin-right: 15px;
+	margin-bottom: 15px;
+	float: left;
+	position: relative;
+}
+.pro-bd a{
+	width: 228px;
+	height: 270px;
+	display: block;
+	border: 1px solid red;
+	overflow: hidden;
+}
+.pro-bd li:hover a{  /*娃儿动，父亲不动=a动li不动*/
+	box-shadow: 2px 2px 2px rgba(0,0,0,0.4);
+	transform: translate(0,-5px);/*相当于相对定位，原来的定位占位置*/
+}
+.pro-bd li:nth-child(5n){  /*从第一个开始，所以没有第一个*/
+	margin-right: 0;
+}
+.pro-bd li .hot{
+	width: 40px;
+	height: 20px;
+	background-color: #fff;
+	border: 1px solid #ff2c2d;
+	position: absolute;
+	top:20px;
+	left: 192px;
+	font-size: 10px;
+	color: #ff7c2d;
+	font-weight: 700;
+	text-align: center;
+	line-height: 20px;
+	z-index: 1; 
+	/*加个层级，因为a会动，当a动的时候，transform提高层级，相当于绝对定位*/
+}
+.pro-bd li .hot span{
+	display: block;
+	width: 4px;
+	height: 20px;
+	background-color: #ff7c2d;
+	position: absolute;  /*相对于.hot定位*/
+	top: -1px;
+	right: -1px;
+	transform-origin: right bottom;
+	transform:skewY(-45deg);
+}
+.pro-bd li .pic img{
+	transition: all 0.5s;
+}
+.pro-bd  li:hover .pic img{
+	transform: translate(-5px,0);
+}
+.pro-bd li .title{
+	padding: 10px 8px 0;
+	color: #050505;
+}
+.pro-bd li p{
+	padding-left: 15px;
+	color: #999;
+	margin-top: 18px;
+	font-size: 14px;
+}
+.pro-bd li p span{
+	color: orange;
+}
+.footer{
+	background-color: #fff;
+	height: 420px;
+	margin-top: 30px;
+	padding-top: 20px;
+}
+.footer-l{
+	float: left;
+}
+.footer-l p{
+	margin-top: 15px;
+	margin-bottom: 25px;
+	font-size: 14px;
+	color: #999;
+	line-height: 20px;
+} 
+.footer-l a{
+	display: block;
+	height: 30px;
+	width: 100px;
+	border: 1px solid #00a4ff;
+	font-size: 16px;
+	color: #00a4ff;
+	text-align: center;
+	line-height: 30px;
+	margin-left: 40px;
+}
+.footer-l a:hover{
+	color: #fff;
+	background-color: #00a4ff;
+}
+.footer-r{
+	float: right;
+	margin-right: 50px;
+}
+.footer-r dl{
+	float: left;
+}
+.footer-r dl:nth-child(2){
+	margin-right: 66px;
+	margin-left: 124px;
+}
+.footer-r dl dt{
+	cursor: pointer;
+	margin-bottom: 15px;
+}
+.footer-r dl dd{
+	margin-bottom: 3px;
+}
+.footer-r dl a{
+	color: #999;
+	font-size: 14px;
+}
+.footer-r dl a:hover{
+	color: #00a4ff;
+}
